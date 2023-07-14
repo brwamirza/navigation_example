@@ -8,10 +8,13 @@ export default function Home() {
   // useEffect(()=>{
   //   console.log("use effect worked");
   // },[])  
+  console.log(count)
 
   useEffect(()=>{
     console.log("use effect worked");
-  },[])  //only works when page loads first time
+  },[count])  //only works when page loads first time
+
+
 
   return (
     <SafeAreaView>
