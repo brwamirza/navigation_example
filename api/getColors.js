@@ -1,21 +1,20 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 
-const useFetch = (endpoint, query) => {
+const useFetch = (endpoint) => {
     const [data, setData] = useState([]);
     const [isLoading, setIsLoading] = useState(false);
     const [error, setError] = useState(null);
 
     const options = {
         method: 'GET',
-        url: `https://jsearch.p.rapidapi.com/${endpoint}`,
+        url: `https://suretoshops-backend.onrender.com/api/commonnew/getColorList`,
         headers: {
-            'X-RapidAPI-Key': 'f63084d2e7msh6104a79717b425fp10afbbjsnf91690c3e313',
-            'X-RapidAPI-Host': 'jsearch.p.rapidapi.com'
+            'Content-type': 'application/json'
         },
-        params: {
-          ...query
-        },
+        // params: {
+        //   ...query
+        // },
       };
 
       const fetchData = async () => {
