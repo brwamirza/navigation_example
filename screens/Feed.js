@@ -2,7 +2,7 @@ import { SafeAreaView, StyleSheet, Text, View } from 'react-native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
 import Home from "./bottomTab/Home";
-import Chat from './bottomTab/chat';
+import Chat from './bottomTab/Chat';
 import Settings from "./bottomTab/Settings";
 
 
