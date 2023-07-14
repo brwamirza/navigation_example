@@ -12,7 +12,9 @@ const BottomTab = createBottomTabNavigator();
 
 export default function Feed() {
   return (
-        <BottomTab.Navigator>
+        <BottomTab.Navigator screenOptions={{
+          headerShown: false,
+        }}>
             <BottomTab.Screen name="Home" component={Home} />
             <BottomTab.Screen name="Chat" component={Chat} />
             <BottomTab.Screen name="Settings" component={Settings} />
