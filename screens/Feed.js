@@ -50,7 +50,7 @@ export default function Feed() {
               tabBarIcon: ({ focused })=>{
                   return (
                       <Ionicons 
-                        name={focused ? "setting" : "settings-outline"} 
+                        name={focused ? "settings" : "settings-outline"} 
                         size={26} 
                         color={focused ? "#48b095" : "grey"} />
                   )
