@@ -13,7 +13,7 @@ export default function Chat() {
     <SafeAreaView>
       <ScrollView>
       {data.map((color)=>{
-          return  <ListItem>
+          return  <ListItem bottomDivider>
                     <ListItem.Content>
                       <ListItem.Title>{color.color_id}</ListItem.Title>
                       <ListItem.Subtitle>EN: {color.color_en}</ListItem.Subtitle>
