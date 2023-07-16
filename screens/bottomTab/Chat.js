@@ -1,8 +1,7 @@
 import { SafeAreaView,ScrollView,StyleSheet, Text, View } from 'react-native';
 import useFetch from '../../api/getColors';
 import {useEffect} from 'react';
-import { ListItem } from '@rneui/themed';
-import { Dialog } from '@rneui/themed';
+import { FAB ,Dialog, ListItem } from '@rneui/themed';
 
 
 
@@ -16,7 +15,7 @@ export default function Chat() {
       <ScrollView>
 
       {(isLoading===false) ?data.map((color)=>{
-          return  <ListItem bottomDivider>
+          return <ListItem bottomDivider>
                     <ListItem.Content>
                       <ListItem.Title>{color.color_id}</ListItem.Title>
                       <ListItem.Subtitle>EN: {color.color_en}</ListItem.Subtitle>
@@ -25,7 +24,17 @@ export default function Chat() {
                     </ListItem.Content>
                   </ListItem>
         }):<Dialog.Loading />}
+
+
       </ScrollView>
+      <FAB
+               visible={true}
+              //  onPress={() => setVisible(!visible)}
+               placement="right"
+               title="Show"
+               icon={{ name: 'edit', color: 'white' }}
+               color="green"
+              />
     </SafeAreaView>
   );
 }
