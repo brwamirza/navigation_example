@@ -28,13 +28,13 @@ export default function Chat() {
 
       </ScrollView>
       <FAB
-               visible={true}
-              //  onPress={() => setVisible(!visible)}
-               placement="right"
-               title="Show"
-               icon={{ name: 'edit', color: 'white' }}
-               color="green"
-              />
+        visible={true}
+       onPress={() => console.log("worked")}
+        placement="right"
+        title="+ Add"
+        // icon={{ name: 'edit', color: 'white' }}
+        color="green"
+      />
     </SafeAreaView>
   );
 }
