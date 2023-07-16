@@ -11,12 +11,16 @@ export default function Chat() {
   console.log(data)
   return (
     <SafeAreaView>
-        <ListItem>
-          <ListItem.Content>
-            <ListItem.Title>John Doe</ListItem.Title>
-            <ListItem.Subtitle>CEO, Example.com</ListItem.Subtitle>
-          </ListItem.Content>
-        </ListItem>
+    {data.map((color)=>{
+      return  <ListItem>
+      <ListItem.Content>
+        <ListItem.Title>{color.color_id}</ListItem.Title>
+        <ListItem.Subtitle>EN: {color.color_en}</ListItem.Subtitle>
+        <ListItem.Subtitle>KU: {color.color_ku}</ListItem.Subtitle>
+        <ListItem.Subtitle>AR: {color.color_ar}</ListItem.Subtitle>
+      </ListItem.Content>
+    </ListItem>
+    })}
     </SafeAreaView>
   );
 }
