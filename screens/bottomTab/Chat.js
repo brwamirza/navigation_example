@@ -14,7 +14,8 @@ export default function Chat() {
   return (
     <SafeAreaView>
       <ScrollView>
-      {data.map((color)=>{
+
+      {(isLoading===false) ?data.map((color)=>{
           return  <ListItem bottomDivider>
                     <ListItem.Content>
                       <ListItem.Title>{color.color_id}</ListItem.Title>
@@ -23,9 +24,8 @@ export default function Chat() {
                       <ListItem.Subtitle>AR: {color.color_ar}</ListItem.Subtitle>
                     </ListItem.Content>
                   </ListItem>
-        })}
+        }):<Dialog.Loading />}
       </ScrollView>
-      <Dialog.Loading />
     </SafeAreaView>
   );
 }
