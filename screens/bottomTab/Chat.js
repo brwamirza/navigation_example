@@ -2,6 +2,8 @@ import { SafeAreaView,ScrollView,StyleSheet, Text, View } from 'react-native';
 import useFetch from '../../api/getColors';
 import {useEffect} from 'react';
 import { ListItem } from '@rneui/themed';
+import { Dialog } from '@rneui/themed';
+
 
 
 export default function Chat() {
@@ -23,6 +25,7 @@ export default function Chat() {
                   </ListItem>
         })}
       </ScrollView>
+      <Dialog.Loading />
     </SafeAreaView>
   );
 }
