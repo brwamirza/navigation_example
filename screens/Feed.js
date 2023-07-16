@@ -2,6 +2,7 @@ import { SafeAreaView, StyleSheet, Text, View } from 'react-native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { Ionicons } from '@expo/vector-icons'; 
 import { MaterialCommunityIcons } from '@expo/vector-icons'; 
+import {useState,useEffect} from 'react';
 
 import Home from "./bottomTab/Home";
 import Chat from './bottomTab/Chat';
@@ -13,9 +14,17 @@ const BottomTab = createBottomTabNavigator();
 
 
 export default function Feed() {
+  const [count, setCount] = useState(0);
+
+  useEffect(()=>{
+    console.log(count);
+  },[count]) 
+
   return (
         <BottomTab.Navigator screenOptions={{headerShown:false}}>         
-            <BottomTab.Screen name="Home" component={Home} 
+            <BottomTab.Screen name="Home" 
+            // component={Home} 
+              children={()=><Home updateCount={()=>setCount(count+1)}/>}
                options={{
                 tabBarIcon: ({ focused })=>{
                     return (

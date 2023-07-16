@@ -1,24 +1,21 @@
 import { SafeAreaView,StyleSheet, Text, View, Button } from 'react-native';
 import { useEffect,useState } from 'react';
 
-export default function Home() {
-  const [count, setCount] = useState(0);
+export default function Home({updateCount}) {
 
   //only works when page loads first time
   // useEffect(()=>{
   //   console.log("use effect worked");
   // },[])  
-  console.log(count)
+  // console.log(count)
 
-  useEffect(()=>{
-    console.log("use effect worked");
-  },[count])  //only works when page loads first time
+ //only works when page loads first time
 
 
 
   return (
     <SafeAreaView>
-        <Button title='increase' onPress={()=>setCount(count+1)}/>
+        <Button title='increase' onPress={()=>updateCount()}/>
     </SafeAreaView>
   );
 }
