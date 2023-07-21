@@ -17,7 +17,7 @@ export default function Chat() {
   console.log(data)
   return (
     <>
-    {/* <SafeAreaView> */}
+    <SafeAreaView>
       <ScrollView>
 
       {(isLoading===false) ?data.map((color)=>{
@@ -44,17 +44,8 @@ export default function Chat() {
 
 
 
-    {/* </SafeAreaView> */}
-    <PaperProvider>
-        <Portal>
-          <Modal visible={visible} onDismiss={hideModal} contentContainerStyle={containerStyle}>
-            <Text>Example Modal.  Click outside this area to dismiss.</Text>
-          </Modal>
-        </Portal>
-        <Button style={{marginTop: 30}} onPress={showModal}>
-          Show
-        </Button>
-    </PaperProvider>
+    </SafeAreaView>
+
     </>
   );
 }
