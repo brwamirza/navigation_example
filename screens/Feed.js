@@ -7,11 +7,17 @@ import {useState,useEffect} from 'react';
 import Home from "./bottomTab/Home";
 import Chat from './bottomTab/Chat';
 import Settings from "./bottomTab/Settings";
-import { createStackNavigator } from '@react-navigation/stack';
+import { createStackNavigator,CardStyleInterpolators } from '@react-navigation/stack';
 
 
 const BottomTab = createBottomTabNavigator();
 const FeedStack = createStackNavigator();
+
+const ModalComponent = () => (
+  <View>
+    <Text>Test</Text>
+  </View>
+)
 
 
 const FeedTabs = () => (
@@ -75,7 +81,10 @@ export default function Feed() {
   },[count]) 
 
   return (
-    <FeedStack.Navigator screenOptions={{headerShown:false}}>
+    <FeedStack.Navigator 
+    screenOptions={{
+      headerShown: false,
+    }}>
       <FeedStack.Screen name='bottomTab' component={FeedTabs} />
     </FeedStack.Navigator>
   );
