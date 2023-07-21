@@ -7,22 +7,16 @@ import {useState,useEffect} from 'react';
 import Home from "./bottomTab/Home";
 import Chat from './bottomTab/Chat';
 import Settings from "./bottomTab/Settings";
+import { createStackNavigator } from '@react-navigation/stack';
 
 
 const BottomTab = createBottomTabNavigator();
+const FeedStack = createStackNavigator();
 
 
-
-export default function Feed() {
-  const [count, setCount] = useState(0);
-
-  useEffect(()=>{
-    console.log(count);
-  },[count]) 
-
-  return (
-        <BottomTab.Navigator screenOptions={{headerShown:false}}>         
-            <BottomTab.Screen name="Home" 
+const bottonTabs = () => (
+<BottomTab.Navigator screenOptions={{headerShown:false}}>         
+        <BottomTab.Screen name="Home" 
             // component={Home} 
               children={()=><Home updateCount={()=>setCount(count+1)}/>}
                options={{
@@ -70,5 +64,21 @@ export default function Feed() {
             }}
             />
         </BottomTab.Navigator>
+)
+
+
+export default function Feed() {
+  const [count, setCount] = useState(0);
+
+  useEffect(()=>{
+    console.log(count);
+  },[count]) 
+
+  return (
+    <FeedStack.Navigator screenOptions={{headerShown:false}}>
+      <FeedStack.Screen name='bottomTab' component={bottonTabs} />
+
+
+    </FeedStack.Navigator>
   );
 }
