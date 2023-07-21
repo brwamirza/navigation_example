@@ -14,7 +14,7 @@ const BottomTab = createBottomTabNavigator();
 const FeedStack = createStackNavigator();
 
 
-const bottonTabs = () => (
+const FeedTabs = () => (
 <BottomTab.Navigator screenOptions={{headerShown:false}}>         
         <BottomTab.Screen name="Home" 
             // component={Home} 
@@ -76,9 +76,7 @@ export default function Feed() {
 
   return (
     <FeedStack.Navigator screenOptions={{headerShown:false}}>
-      <FeedStack.Screen name='bottomTab' component={bottonTabs} />
-
-
+      <FeedStack.Screen name='bottomTab' component={FeedTabs} />
     </FeedStack.Navigator>
   );
 }
