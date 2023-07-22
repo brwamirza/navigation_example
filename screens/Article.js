@@ -1,9 +1,9 @@
-import { SafeAreaView,StyleSheet, Text, View } from 'react-native';
-import { UseSelector } from 'react-redux/es/hooks/useSelector';
-
+import { SafeAreaView,StyleSheet, Text, View,ScrollView } from 'react-native';
+import { useSelector} from 'react-redux';
+import { Dialog, ListItem } from '@rneui/themed';
 
 export default function Article() {
-const {color} = UseSelector(state=> state.colorReducer);
+const {color} = useSelector(state=> state.colorReducer);
 console.log(color)
 
   return (
