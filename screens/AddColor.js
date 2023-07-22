@@ -3,6 +3,7 @@ import { TextInput,Button  } from 'react-native-paper';
 import { useState } from 'react';
 
 import addColor from '../api/addColor.service';
+import {getColors} from '../api/getColors'
 
 export default function AddColor() {
     
@@ -25,6 +26,7 @@ export default function AddColor() {
             sendData(newData);
             if(data){
                 Alert.alert(`Data submited ${data}`)
+                
             }
             if(error){
                 Alert.alert(`${error}`)
