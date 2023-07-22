@@ -5,12 +5,16 @@ import { useState } from 'react';
 import addColor from '../api/addColor.service';
 
 export default function AddColor() {
+    
+    //1- edit each item
+    //2-delete each item
+
     const [colorEN, setColorEN] = useState("");
     const [colorAR, setColorAR] = useState("");
     const [colorKR, setColorKR] = useState("");
     
     const{data,error,sendData} = addColor();
-    
+
     const submitData =()=> {
         let newData = {
             color_ku:colorKR,

@@ -5,6 +5,9 @@ import { FAB ,Dialog, ListItem } from '@rneui/themed';
 import { Modal, Portal, Button, PaperProvider } from 'react-native-paper';
 import { useNavigation } from '@react-navigation/native';
 import { createStackNavigator,CardStyleInterpolators} from '@react-navigation/stack';
+import { useDispatch } from 'react-redux';
+
+import { setColors } from '../../redux/actions';
 
 import AddColor from '../AddColor'
 
@@ -15,6 +18,13 @@ const ColorList = () =>{
   const navigation = useNavigation();
 
   const {data,error,isLoading} = useFetch();
+
+  const dispatch = useDispatch();
+
+  useEffect(()=>{
+    // send data to redux when data updated
+    dispatch(setColors(data))
+  },[data])
 
   return (<>
     <ScrollView>
