@@ -10,8 +10,8 @@ export default function AddColor() {
     const [colorKR, setColorKR] = useState("");
     
     const{data,error,sendData} = addColor();
-
-     const submitData =()=> {
+    
+    const submitData =()=> {
         let newData = {
             color_ku:colorKR,
             color_en:colorEN,
