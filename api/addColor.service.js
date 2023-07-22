@@ -1,24 +1,25 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 
-const addColor = (colors) => {
+const addColor = () => {
     const [data, setData] = useState([]);
     const [isLoading, setIsLoading] = useState(false);
     const [error, setError] = useState(null);
 
-    const options = {
-        method: 'POST',
-        url: `https://suretoshops-backend.onrender.com/api/commonnew/inscolor`,
-        headers: {
-            'Content-type': 'application/json'
-        },
-        data: {
-          ...colors
-        },
+      const sendData = async (colors) => {
 
-      };
+        const options = {
+          method: 'POST',
+          url: `https://suretoshops-backend.onrender.com/api/commonnew/inscolor`,
+          headers: {
+              'Content-type': 'application/json'
+          },
+          data: {
+            ...colors
+          },
+  
+        };
 
-      const fetchData = async () => {
         setIsLoading(true);
 
         try{
@@ -35,16 +36,7 @@ const addColor = (colors) => {
         }
       }
 
-      useEffect(()=> {
-        fetchData();
-      },[]);
-
-      const refetch = () => { //if data is not loaded properly
-        setIsLoading(true);
-        fetchData();
-      }
-
-      return {data, isLoading, error, refetch}
+      return {data, isLoading, error,sendData}
 }
 
 export default addColor

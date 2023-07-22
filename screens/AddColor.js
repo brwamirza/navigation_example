@@ -8,15 +8,17 @@ export default function AddColor() {
     const [colorEN, setColorEN] = useState("");
     const [colorAR, setColorAR] = useState("");
     const [colorKR, setColorKR] = useState("");
+    
+    const{data,error,sendData} = addColor();
 
-    const submitData = () => {
+     const submitData =()=> {
         let newData = {
             color_ku:colorKR,
             color_en:colorEN,
             color_ar:colorAR
         }
         if (colorKR !=="" && colorAR !=="" && colorEN!==""){
-            const {data,error,isLoading} = addColor(newData)
+            sendData(newData);
             if(data){
                 Alert.alert(`Data submited ${data}`)
             }
